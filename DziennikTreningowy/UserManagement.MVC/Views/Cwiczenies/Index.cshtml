@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DziennikTreningowy.Models.Cwiczenie>
+
+@{
+    ViewData["Title"] = "Ćwiczenie";
+}
+
+<h1>Ćwiczenia</h1>
+
+<p>
+    <a asp-action="Create">Stwórz nowe</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nazwa ćwiczenia
+            </th>
+            <th>
+                Ilość powtórzeń
+            </th>
+            <th>
+                Kategoria
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaCwiczenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IloscPowtorzen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategorias.NazwaKategorii)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CwiczenieID">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.CwiczenieID">Detale</a> |
+                <a asp-action="Delete" asp-route-id="@item.CwiczenieID">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DziennikTreningowy.Models.Trening>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Treningi</h1>
+
+<p>
+    <a asp-action="Create">Stwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nazwa ćwiczenia
+            </th>
+            <th>
+                Kategoria
+            </th>
+            <th>
+                Data treningu
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cwiczenies.NazwaCwiczenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cwiczenies.Kategorias.NazwaKategorii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.isActive, new { onclick = "return false" })
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TreningID">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.TreningID">Detale</a> |
+                <a asp-action="Delete" asp-route-id="@item.TreningID">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@model DziennikTreningowy.Models.Cwiczenie
+
+@{
+    ViewData["Title"] = "Detale";
+}
+
+<h1>Detale</h1>
+
+<div>
+    <h4>Ćwiczenia</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NazwaCwiczenia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NazwaCwiczenia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IloscPowtorzen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IloscPowtorzen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Kategoria")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kategorias.NazwaKategorii)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CwiczenieID">Edytuj</a> |
+    <a asp-action="Index">Powrót</a>
+</div>

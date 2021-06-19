@@ -1,0 +1,44 @@
+﻿@model DziennikTreningowy.Models.Cwiczenie
+
+@{
+    ViewData["Title"] = "Edycja";
+}
+
+<h1>Edytuj</h1>
+
+<h4>Cwiczenie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CwiczenieID" />
+            <div class="form-group">
+                <label asp-for="NazwaCwiczenia" class="control-label"></label>
+                <input asp-for="NazwaCwiczenia" class="form-control" />
+                <span asp-validation-for="NazwaCwiczenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IloscPowtorzen" class="control-label"></label>
+                <input asp-for="IloscPowtorzen" class="form-control" />
+                <span asp-validation-for="IloscPowtorzen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriaID" class="control-label"></label>
+                <select asp-for="KategoriaID" class="form-control" asp-items="@(new SelectList(ViewBag.Kategoria, "Key", "Value"))"></select>
+                <span asp-validation-for="KategoriaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Powrót</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

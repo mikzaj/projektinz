@@ -1,0 +1,64 @@
+﻿@model DziennikTreningowy.Models.Pomiar
+
+@{
+    ViewData["Title"] = "Edytuj";
+}
+
+<h1>Edytuj</h1>
+
+<h4>Pomiar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PomiarID" />
+            <div class="form-group">
+                <label asp-for="WzrostID" class="control-label">Wzrost (cm)</label>
+                <input asp-for="WzrostID" class="form-control" />
+                <span asp-validation-for="WzrostID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WagaID" class="control-label">Waga (kg)</label>
+                <input asp-for="WagaID" class="form-control" />
+                <span asp-validation-for="WagaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RamieID" class="control-label">Ramię (cm)</label>
+                <input asp-for="RamieID" class="form-control" />
+                <span asp-validation-for="RamieID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KlatkaID" class="control-label">Klatka piersiowa (cm)</label>
+                <input asp-for="KlatkaID" class="form-control" />
+                <span asp-validation-for="KlatkaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaliaID" class="control-label">Talia (cm)</label>
+                <input asp-for="TaliaID" class="form-control" />
+                <span asp-validation-for="TaliaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UdaID" class="control-label">Udo (cm)</label>
+                <input asp-for="UdaID" class="form-control" />
+                <span asp-validation-for="UdaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LydkaID" class="control-label">Łydka (cm)</label>
+                <input asp-for="LydkaID" class="form-control" />
+                <span asp-validation-for="LydkaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Powrót</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,60 @@
+﻿@model DziennikTreningowy.Models.Pomiar
+
+@{
+    ViewData["Title"] = "Detale";
+}
+
+<h1>Detale</h1>
+
+<div>
+    <h4>Pomiaru</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Wzrost
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WzrostID) cm
+        </dd>
+        <dt class = "col-sm-2">
+            Waga
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WagaID) kg
+        </dd>
+        <dt class="col-sm-2">
+            Ramię
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RamieID) cm
+        </dd>
+        <dt class="col-sm-2">
+            Klatka piersiowa
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KlatkaID) cm
+        </dd>
+        <dt class="col-sm-2">
+            Talia
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaliaID) cm
+        </dd>
+        <dt class="col-sm-2">
+            Udo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UdaID) cm
+        </dd>
+        <dt class="col-sm-2">
+            Łydka
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LydkaID) cm
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PomiarID">Edytuj</a> |
+    <a asp-action="Index">Powrót</a>
+</div>
